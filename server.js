@@ -3,6 +3,9 @@ const http = require('http');
 const hostname = 'localhost';
 const port = 3000;
 
+const path = require('path');
+const fs = require('fs');
+
 const server = http.createServer((req, res) => {   // req object can be coming from client or postman
     console.log(req.headers);                     // console logging this so we can see headers 
     res.statusCode = 200;                         // everything ok 
