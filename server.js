@@ -7,7 +7,7 @@ const port = 3000;
 const app = express();
 app.use(morgan('dev'));  // morgan middleware with morgan function with argument 'dev'. Configures morgan to log using the development version which will give us additional information
 
-//set up express to serve files from the public folder using 1 line of code
+//set up express to serve files from the public folder using 1 line of code. This is how we serve up About and Home!
 app.use(express.static(__dirname + '/public'));  // middleware func built in called express.static. Pass it express.static func w argument __dirname (special node variable = absolute path of the current directory of the file that it's in)
  
 // this is a middleware function 
