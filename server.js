@@ -1,48 +1,19 @@
-const http = require('http');
+const express = require('express'); 
 
 const hostname = 'localhost';
 const port = 3000;
 
-const path = require('path');
-const fs = require('fs');
+const app = express();
 
-const server = http.createServer((req, res) => {   // req object can be coming from client or postman
-    console.log(`Request for ${req.url} by method ${req.method}`);
-
-    if (req.method === 'GET') {     // if it's a GET request, look at URL that was requested 
-        let fileUrl = req.url;      // local variable fileUrl, value = get contents of URL like this 
-        if (fileUrl === '/') {      // if request is just to host name (ie local host) without specifying About or Index...  
-            fileUrl = '/index.html';  // ... then req.url property will just contain forward slash and we'll automatically send back index.html page 
-        }
-
-        const filePath = path.resolve('./public' + fileUrl);  // get absolute path of file that's been requested, store it in filePath. Use path.resolve to convert from relative to absolute path. Req file is in public folder + file url
-        const fileExt = path.extname(filePath);   // server should only grab requests for HTML files. Use this line to check if HTML file
-
-        if (fileExt === '.html') {   // if fileExt = html, we know we have a GET request for an HTML file 
-            fs.access(filePath, err => {    // this access method takes 2 arguments, path of file we want to check and callback that takes error argument 
-                if (err) {   // if file is not accessible, then error object passed to err argument, if truthy then 404
-                    res.statusCode = 404;
-                    res.setHeader('Content-Type', 'text/html');
-                    res.end(`<html><body><h1>Error 404: ${fileUrl} not found</h1></body></html>`);  // this is an html file but file not found (it wasn't index or about)
-                    return;   // need this so that code after this is not executed 
-                }
-                res.statusCode = 200;   // GET request for HTML file that exists - valid request (final stop) = success
-                res.setHeader('Content-Type', 'text/html');   //
-
-                fs.createReadStream(filePath).pipe(res);     // send the HTML file using createReadStream, reads contents of file it's given in small chunks, not all at once. Doesn't load whole file into memory right away.  .pipe(res) means sending it over to response object
-            });
-        } else {      // if file ext is NOT html, we'll send 404 error response
-            res.statusCode = 404;
-            res.setHeader('Content-Type', 'text/html');
-            res.end(`<html><body><h1>Error 404: ${fileUrl} is not an HTML file</h1></body></html>`);  // file url is not html
-        }
-    } else {   // this handles anything other than GET request 
-        res.statusCode = 404;
-        res.setHeader('Content-Type', 'text/html');
-        res.end(`<html><body><h1>Error 404: ${req.method} not supported</h1></body></html>`);
-    }
+// this is a middleware function 
+app.use((req, res) => {   // use method takes callback function (middleware function). Middleware in express has access to req (request object), res (response object), and next 
+    console.log(req.headers);    // console req headers
+    res.statusCode = 200;        // success code 
+    res.setHeader('Content-Type', 'text/html');   // content = text 
+    res.end('<html><body><h1>This is an Express Server</h1></body></html>'); // end it with inline HTML doc 
 });
 
-server.listen(port, hostname, () => {          // 2 arguments; port and hostname variables, 3rd argument is a callback function that will be executed when the server starts up
-    console.log(`Server running at http://${hostname}:${port}/`);   // console to let us know server is running 
+// create a server and start listening to it 
+app.listen(port, hostname, () => {   // creates instance of HTTP server class and starts listening to it 
+    console.log(`Server running at http://${hostname}:${port}/`);   // provide port and host name, callback func to console server running at this location 
 });
