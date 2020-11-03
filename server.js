@@ -23,13 +23,13 @@ const server = http.createServer((req, res) => {   // req object can be coming f
                 if (err) {   // if file is not accessible, then error object passed to err argument, if truthy then 404
                     res.statusCode = 404;
                     res.setHeader('Content-Type', 'text/html');
-                    res.end(`<html><body><h1>Error 404: ${fileUrl} not found</h1></body></html>`);
-                    return;
+                    res.end(`<html><body><h1>Error 404: ${fileUrl} not found</h1></body></html>`);  // this is an html file but file not found (it wasn't index or about)
+                    return;   // need this so that code after this is not executed 
                 }
-                res.statusCode = 200;
-                res.setHeader('Content-Type', 'text/html');
+                res.statusCode = 200;   // GET request for HTML file that exists - valid request (final stop) = success
+                res.setHeader('Content-Type', 'text/html');   //
 
-                fs.createReadStream(filePath).pipe(res);
+                fs.createReadStream(filePath).pipe(res);     // send the HTML file using createReadStream, reads contents of file it's given in small chunks, not all at once. Doesn't load whole file into memory right away.  .pipe(res) means sending it over to response object
             });
         } else {      // if file ext is NOT html, we'll send 404 error response
             res.statusCode = 404;
