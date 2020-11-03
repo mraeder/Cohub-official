@@ -6,16 +6,19 @@ const hostname = 'localhost';
 const port = 3000;
 
 const app = express();
-app.use(morgan('dev'));  // morgan middleware with morgan function with argument 'dev'. Configures morgan to log using the development version which will give us additional information
-app.use(bodyParser.json());
-app.all('/campsites', (req, res, next) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    next();
+app.use(morgan('dev'));      // morgan middleware with morgan function with argument 'dev'. Configures morgan to log using the development version which will give us additional information
+app.use(bodyParser.json());  // when server gets requests w JSON formatted data in body, body-parser will handle parsing that data into properties of the request object so we can access that data more easily  
+
+// add support for REST api endpoints 
+app.all('/materials', (req, res, next) => {    // app.all catches all HTTP verbs, set default properties for all default methods so we don't have to set repeatedly on each one. /path + callback func. Any request to this path will trigger this method, (req, res, next)
+    res.statusCode = 200;                      // success 
+    res.setHeader('Content-Type', 'text/plain');   // text plain 
+    next();   // call the next function. Pass control of application routing to next relevant routing method after this one. Otherwise it would just stop here
 });
 
-app.get('/campsites', (req, res) => {
-    res.end('Will send all the campsites to you');
+// set up an endpoint for get request to /materials
+app.get('/materials', (req, res) => {   // get request, don't have 'next' in here because we don't want to process any more routing methods after this one
+    res.end('Will send all the materials to you');  // status code and headers already set with app.all. Just end it to send message to client.
 });
 
 app.post('/campsites', (req, res) => {
