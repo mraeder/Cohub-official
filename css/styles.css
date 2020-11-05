@@ -1,0 +1,156 @@
+body {
+    font-family: "Open Sans", sans-serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Catamaran', sans-serif;
+}
+
+h2 {
+    color: rgb(253, 169, 141); 
+    font-weight: bold;
+}
+
+header h2 {
+    color: #CEC8FF;
+}
+
+h3 {
+    color: rgb(253, 169, 141); 
+    font-weight: bold;
+}
+
+h4 {
+    color: #17a5a3;
+    font-size: 23px;
+}
+
+h6 {
+    color:rgb(255, 145, 109); 
+    font-size: 20px;
+}
+
+h7, h8 {
+    color:  #54afaf;
+    font-size: 23px;
+}
+
+/* Navbar - projects, experience, about links */
+.nav-link:link {
+    color: #ADEAEA;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+}
+.nav-link:visited {
+    color: #b2f0f0;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+}
+.nav-link:hover {
+    color:rgb(253, 169, 141); 
+    background-color: transparent;
+    text-decoration: underline;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Footer links */
+a:link {
+    color: #ADEAEA;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: #0a918e;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color:rgb(253, 169, 141); 
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+/* Footer social icons */
+i:link {
+    color: #ADEAEA;
+    background-color: transparent;
+    text-decoration: none;
+}
+i:visited {
+    color: #0a918e;
+    background-color: transparent;
+    text-decoration: none;
+}
+i:hover {
+    color:rgb(253, 169, 141); 
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.bio-text {
+    font-size: 23px;
+}
+
+.site-footer{ 
+    padding: 20px 0;
+}
+
+.navbar {
+    padding: 15px;
+    background-color:#17a5a3;
+    color: white;
+}
+
+.title {
+    color:#ecfbfd;
+    font-size: 20px;
+    font-weight: bold; 
+}
+
+.name {
+    color: #1f5fd6;
+    font-size: 40px;
+    font-weight: bold;  
+}
+
+.navbar-nav {
+    font-size: 25px;
+}
+
+.nav-item {
+    padding-left: 20px;
+    padding-right: 20px; 
+    font-weight: bold;
+}
+
+.row-content {
+    padding: 50px 0;           
+    border-bottom: 1px ridge;
+    min-height: 200px;
+}
+
+.fa-github, .fa-linkedin, .fa-twitter, .fa-youtube {
+    color:  #17a5a3;
+}  
+
+.contact {
+    font-size: 25px;
+    color: #17a5a3;
+}
+
+.about-card {
+    background-color: rgb(253, 177, 152); 
+}
+
+.upcoming-projects {
+    font-size: 22px;
+}
+
+.card-body {
+    font-size: 18px;
+}
