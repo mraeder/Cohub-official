@@ -40,21 +40,21 @@ h7, h8 {
     color: #ADEAEA;
     background-color: transparent;
     text-decoration: none;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
 }
 .nav-link:visited {
     color: #b2f0f0;
     background-color: transparent;
     text-decoration: none;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
 }
 .nav-link:hover {
     color:rgb(253, 169, 141); 
     background-color: transparent;
     text-decoration: underline;
-    font-size: 28px;
+    font-size: 20px;
     font-weight: bold;
 }
 
