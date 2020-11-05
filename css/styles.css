@@ -2,36 +2,39 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-h1, h2, h3 {
+h1 {
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #50B547;
+    font-size: 70px;
 }
 
-h2 {
-    color: rgb(253, 169, 141); 
+h2, h3 {
+    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 }
 
-header h2 {
-    color: #CEC8FF;
+h2 {
+    color: #202835;
 }
 
 h3 {
-    color: rgb(253, 169, 141); 
+    color: #202835;
     font-weight: bold;
 }
 
 h4 {
-    color: #17a5a3;
+    color: #202835;
     font-size: 23px;
 }
 
 h6 {
-    color:rgb(255, 145, 109); 
+    color:#202835;
     font-size: 20px;
 }
 
 h7, h8 {
-    color:  #54afaf;
+    color:  #202835;
     font-size: 23px;
 }
 
@@ -77,17 +80,15 @@ a:hover {
 
 /* Footer social icons */
 i:link {
-    color: #ADEAEA;
-    background-color: transparent;
+    color: #50B547;
     text-decoration: none;
 }
 i:visited {
-    color: #0a918e;
-    background-color: transparent;
+    color: #50B547;
     text-decoration: none;
 }
 i:hover {
-    color:rgb(253, 169, 141); 
+    color:#878fa0;
     background-color: transparent;
     text-decoration: underline;
 }
@@ -108,8 +109,9 @@ i:hover {
 
 .jumbotron {
     padding: 10px;
-    background-color:#1E2330;
+    background-color:#202835;
     color: white;
+    text-align:center; 
 }
 
 .title {
@@ -141,20 +143,11 @@ i:hover {
 }
 
 .fa-github, .fa-linkedin, .fa-twitter, .fa-youtube {
-    color:  #17a5a3;
+    color: #50B547;
 }  
-
-.contact {
-    font-size: 25px;
-    color: #17a5a3;
-}
 
 .about-card {
     background-color: rgb(253, 177, 152); 
-}
-
-.upcoming-projects {
-    font-size: 22px;
 }
 
 .card-body {
