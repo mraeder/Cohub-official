@@ -1,9 +1,9 @@
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h1, h2, h3 {
-    font-family: 'Catamaran', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
@@ -37,21 +37,21 @@ h7, h8 {
 
 /* Navbar - projects, experience, about links */
 .nav-link:link {
-    color: #ADEAEA;
+    color: #1E2330;
     background-color: transparent;
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
 }
 .nav-link:visited {
-    color: #b2f0f0;
+    color: #1E2330;
     background-color: transparent;
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
 }
 .nav-link:hover {
-    color:rgb(253, 169, 141); 
+    color:#878fa0;
     background-color: transparent;
     text-decoration: underline;
     font-size: 20px;
@@ -60,17 +60,17 @@ h7, h8 {
 
 /* Footer links */
 a:link {
-    color: #ADEAEA;
+    color: #1E2330;
     background-color: transparent;
     text-decoration: none;
 }
 a:visited {
-    color: #0a918e;
+    color: #1E2330;
     background-color: transparent;
     text-decoration: none;
 }
 a:hover {
-    color:rgb(253, 169, 141); 
+    color:#878fa0;
     background-color: transparent;
     text-decoration: underline;
 }
@@ -101,8 +101,14 @@ i:hover {
 }
 
 .navbar {
-    padding: 15px;
-    background-color:#17a5a3;
+    padding: 10px;
+    background-color:#FFFFFF; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+.jumbotron {
+    padding: 10px;
+    background-color:#1E2330;
     color: white;
 }
 
