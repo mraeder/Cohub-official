@@ -19,13 +19,15 @@ h2 {
 }
 
 h3 {
-    color: #202835;
+    color: #50B547;
+    font-size: 34px;
     font-weight: bold;
 }
 
 h4 {
-    color: #202835;
-    font-size: 23px;
+    color:  #202835;
+    font-size: 34px;
+    font-weight: bold;
 }
 
 h6 {
@@ -38,59 +40,8 @@ h7, h8 {
     font-size: 23px;
 }
 
-/* Navbar - projects, experience, about links */
-.nav-link:link {
-    color: #1E2330;
-    background-color: transparent;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-}
-.nav-link:visited {
-    color: #1E2330;
-    background-color: transparent;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: bold;
-}
-.nav-link:hover {
-    color:#878fa0;
-    background-color: transparent;
-    text-decoration: underline;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-/* Footer links */
-a:link {
-    color: #1E2330;
-    background-color: transparent;
-    text-decoration: none;
-}
-a:visited {
-    color: #1E2330;
-    background-color: transparent;
-    text-decoration: none;
-}
-a:hover {
-    color:#878fa0;
-    background-color: transparent;
-    text-decoration: underline;
-}
-
-/* Footer social icons */
-i:link {
-    color: #50B547;
-    text-decoration: none;
-}
-i:visited {
-    color: #50B547;
-    text-decoration: none;
-}
-i:hover {
-    color:#878fa0;
-    background-color: transparent;
-    text-decoration: underline;
+.story {
+    font-size: 15px;
 }
 
 .bio-text {
@@ -152,4 +103,59 @@ i:hover {
 
 .card-body {
     font-size: 18px;
+}
+
+/* Navbar - projects, experience, about links */
+.nav-link:link {
+    color: #1E2330;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav-link:visited {
+    color: #1E2330;
+    background-color: transparent;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+.nav-link:hover {
+    color:#878fa0;
+    background-color: transparent;
+    text-decoration: underline;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Footer links */
+a:link {
+    color: #1E2330;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:visited {
+    color: #1E2330;
+    background-color: transparent;
+    text-decoration: none;
+}
+a:hover {
+    color:#878fa0;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+/* Footer social icons */
+i:link {
+    color: #50B547;
+    text-decoration: none;
+}
+i:visited {
+    color: #50B547;
+    text-decoration: none;
+}
+i:hover {
+    color:#878fa0;
+    background-color: transparent;
+    text-decoration: underline;
 }
