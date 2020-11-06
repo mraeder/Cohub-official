@@ -62,19 +62,35 @@
 
     <div class="container"> 
         <form>
-            <h2>Post what you want to give away</h2>
-            <p>*INDICATES REQUIRED FIELD</p>
-            <div class="form-group">
-                <label for="materialForm">DESCRIPTION*</label>
-                <input type="text" class="form-control" id="materialForm" placeholder="Description">
+            <div class="form-group col-md-6">
+                <h2>Post what you want to give away</h2>
+                <p>*INDICATES REQUIRED FIELD</p>
+                <label for="inputMaterial">Material*</label>
+                <select id="inputMaterial" class="form-control">
+                    <option selected>Paper</option>
+                    <option>Electronics</option>
+                    <option>Ferrous</option>
+                    <option>Non-Ferrous</option>
+                    <option>Plastics</option>
+                    <option>Textiles</option>
+                    <option>Tires or Rubber</option>
+                    <option>Glass</option>
+                    <option>Other (Explain below)</option>
+                </select>
             </div>
-            <div class="form-group">
+            <div class="form-group col-6"> 
+                <label for="materialForm">DESCRIPTION*</label>
+                <input type="text" class="form-control" id="materialForm" placeholder="Description"> 
+            </div>
+            <div class="form-group col-6"> 
                 <label for="materialForm">ORGANIZATION</label>
                 <input type="text" class="form-control" id="materialForm" placeholder="Organization">
             </div>
-            <div class="form-group">
+            <div class="form-group col-6"> 
                 <label for="materialForm">EXPIRY DATE*</label>
                 <input type="text" class="form-control" id="materialForm" placeholder="Expiry Date">
+                <br>
+                <button class="submit btn btn-secondary" type="submit">Submit</button>
             </div>
         </form> 
         
