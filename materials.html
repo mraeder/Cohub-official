@@ -62,10 +62,12 @@
 
     <div class="container"> 
         <form>
-            <div class="form-group col-md-6">
-                <h2>Post what you want to give away</h2>
+            <div class="form-group col-md-4">
+                <h3>Post what you want to give away</h3>
+                <br>
                 <p>*INDICATES REQUIRED FIELD</p>
-                <label for="inputMaterial">Material*</label>
+                <div class="form-group col-md-4"></div>
+                <label for="inputMaterial">MATERIAL*</label>
                 <select id="inputMaterial" class="form-control">
                     <option selected>Paper</option>
                     <option>Electronics</option>
@@ -78,15 +80,15 @@
                     <option>Other (Explain below)</option>
                 </select>
             </div>
-            <div class="form-group col-6"> 
+            <div class="form-group col-5 form-group-lg"> 
                 <label for="materialForm">DESCRIPTION*</label>
-                <input type="text" class="form-control" id="materialForm" placeholder="Description"> 
+                <input type="text" class="description" id="materialForm" placeholder="Description"> 
             </div>
-            <div class="form-group col-6"> 
+            <div class="form-group col-5"> 
                 <label for="materialForm">ORGANIZATION</label>
                 <input type="text" class="form-control" id="materialForm" placeholder="Organization">
             </div>
-            <div class="form-group col-6"> 
+            <div class="form-group col-5"> 
                 <label for="materialForm">EXPIRY DATE*</label>
                 <input type="text" class="form-control" id="materialForm" placeholder="Expiry Date">
                 <br>
