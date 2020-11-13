@@ -1,9 +1,73 @@
+const createError = require('http-errors');
 const express = require('express'); 
 const morgan = require('morgan'); 
 const bodyParser = require('body-parser');  // req body-parser middleware
+const path = require('path');
+const logger = require('morgan');
+const session = require('express-session');
+const FileStore = require('session-file-store')(session);
 
-const hostname = 'localhost';
-const port = 3000;
+const aboutRouter = require('./routes/about');
+const contactRouter = require('./routes/contact');
+const homeRouter = require('./routes/inspiration');
+const inspirationRouter = require('./routes/inspiration');
+const materialsRouter = require('./routes/materials');
+const myaccountRouter = require('./routes/myaccount');
+
+const mongoose = require('mongoose'); 
+
+const url = 'mongodb://localhost:27017/cohub';
+
+const connect = mongoose.connect(url, {
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useNewUrlParser: true,
+    useUnifiedTopology: true              
+});
+
+connect.then(() => console.log('Connected correctly to server'),
+    err => console.log(err)
+);
+
+const app = express();
+
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use(session({
+    name: 'session-id',
+    secret: '8675309-9035768',
+    saveUninitialized: false,
+    resave: false,
+    store: new FileStore()
+}));
+
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
+function auth(req, res, next) {
+    console.log(req.session);
+
+    if (!req.session.user) {
+        const err = new Error('You are not authenticated!');
+        err.status = 401;
+        return next(err);
+    } else {
+        if (req.session.user === 'authenticated') {
+            return next();
+        } else {
+            const err = new Error('You are not authenticated!');
+            err.status = 401;
+            return next(err);
+        }
+    }
+}
+
 
 const app = express();
 app.use(morgan('dev'));      // morgan middleware with morgan function with argument 'dev'. Configures morgan to log using the development version which will give us additional information
