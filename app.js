@@ -6,7 +6,7 @@ const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
 const contactRouter = require('./routes/contact');
-const homeRouter = require('./routes/inspiration');
+const indexRouter = require('./routes/index');
 const inspirationRouter = require('./routes/inspiration');
 const materialsRouter = require('./routes/materials');
 const myaccountRouter = require('./routes/myaccount');
@@ -44,7 +44,7 @@ app.use(session({
     store: new FileStore()
 }));
 
-app.use('/', homeRouter);
+app.use('/', indexRouter);
 
 function auth(req, res, next) {
     console.log(req.session);
