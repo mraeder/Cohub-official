@@ -47,8 +47,8 @@ app.use(session({
     store: new FileStore()
 }));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', homeRouter);
+app.use('/about', aboutRouter);
 
 function auth(req, res, next) {
     console.log(req.session);
@@ -68,10 +68,38 @@ function auth(req, res, next) {
     }
 }
 
+app.use(auth);
 
-const app = express();
-app.use(morgan('dev'));      // morgan middleware with morgan function with argument 'dev'. Configures morgan to log using the development version which will give us additional information
-app.use(bodyParser.json());     // when server gets requests w JSON formatted data in body, body-parser will handle parsing that data into properties of the request object so we can access that data more easily  
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.use('/materials', materialRouter);
+app.use('/inspiration', inspirationRouter);
+app.use('/contact', contactRouter);
+app.use('/myaccount', myaccountRouter);
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
+
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
+
+module.exports = app;
+
+
+
+
+
+
 
 // add support for REST api endpoints 
 app.all('/materials', (req, res, next) => {    // app.all catches all HTTP verbs, set default properties for all default methods so we don't have to set repeatedly on each one. /path + callback func. Any request to this path will trigger this method, (req, res, next)
