@@ -5,7 +5,6 @@ const logger = require('morgan');
 const session = require('express-session');
 const FileStore = require('session-file-store')(session);
 
-const aboutRouter = require('./routes/about');
 const contactRouter = require('./routes/contact');
 const homeRouter = require('./routes/inspiration');
 const inspirationRouter = require('./routes/inspiration');
@@ -46,7 +45,6 @@ app.use(session({
 }));
 
 app.use('/', homeRouter);
-app.use('/about', aboutRouter);
 
 function auth(req, res, next) {
     console.log(req.session);
